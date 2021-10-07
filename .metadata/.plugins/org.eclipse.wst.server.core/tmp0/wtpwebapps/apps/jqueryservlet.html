@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>  
+<script>
+$(document).ready(function() {
+	$('#userName').blur(function() {
+		alert("working")
+		$.ajax({
+			url : 'GetUserServlet',
+			data : {
+				userName : $('#userName').val()
+			},
+			success : function(responseText) {
+				$('#ajaxGetUserServletResponse').text(responseText);
+			}
+		});
+	});
+});
+
+</script>
+	
+</head>
+<body>
+<form>
+		Enter Your Name: <input type="text" id="userName" />
+	</form>
+	<br>
+	<br>
+
+	<strong>Ajax Response</strong>:
+	<div id="ajaxGetUserServletResponse"></div>
+</body>
+
+
+</html>

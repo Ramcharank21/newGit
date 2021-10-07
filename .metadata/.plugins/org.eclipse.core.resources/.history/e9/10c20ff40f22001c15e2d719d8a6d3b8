@@ -1,0 +1,158 @@
+package apps.serviceimpl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import apps.bean.Emp;
+import apps.bean.EmployeBean;
+import apps.dbutils.DbUtil;
+import apps.service.Employe;
+import apps.service.EmployeRegister;
+
+public class EmployeImpl implements Employe {
+	Connection connection = null;
+	int status = 0;
+
+	@Override
+	public int save(EmployeBean e) {
+		// TODO Auto-generated method stub
+		DbUtil Db = new DbUtil();
+		connection = Db.dataBase();
+		try {
+			PreparedStatement statement = connection
+					.prepareStatement("insert into employe(eid,ename,esal) values(?,?,?)");
+			statement.setInt(1, e.getEid());
+			;
+			statement.setString(2, e.getEname());
+			statement.setDouble(3, e.getEsal());
+
+			status = statement.executeUpdate();
+		} catch (Exception e2) {
+			// TODO: handle exception
+			e2.printStackTrace();
+		} finally {
+			if (connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+
+				}
+		}
+		return status;
+	}
+
+	@Override
+	public double update(EmployeBean e) {
+		// TODO Auto-generated method stub
+		double status = 0;
+
+		DbUtil Db = new DbUtil();
+		connection = Db.dataBase();
+		try {
+			PreparedStatement statement = connection.prepareStatement("update  employe set ename='uday'  where=?");
+			statement.setString(1, e.getEname());
+			;
+			status = statement.executeUpdate();
+		} catch (Exception e2) {
+			// TODO: handle exception
+			e2.printStackTrace();
+		} finally {
+			if (connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+		}
+		return status;
+
+	}
+
+	@Override
+	public int delete(int eid) {
+		// TODO Auto-generated method stub
+		 int status=0;  
+		 DbUtil Db = new DbUtil();
+		 connection = Db.dataBase(); 
+	        try{  
+	            PreparedStatement ps=connection.prepareStatement("delete from employe where id=?");  
+	            ps.setInt(1,eid);  
+	            status=ps.executeUpdate();    
+	        }catch(Exception e){
+	        	e.printStackTrace();}  
+	          finally {
+				if(connection !=null);
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+	        return status;  
+	}
+
+	@Override
+	public EmployeBean getEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		EmployeBean ebb=new EmployeBean();
+		try {
+			PreparedStatement ps=connection.prepareStatement("select * from employe where id=?");  
+			ps.setInt(1,id);  
+			ResultSet rs=ps.executeQuery();  
+			if(rs.next()){  
+				ebb.setEid(rs.getInt(1));  
+				ebb.setEname(rs.getString(2));  
+				ebb.setEsal(rs.getDouble(3));  
+			}
+			}catch (Exception e5) {
+			// TODO: handle exception
+		
+     e5.printStackTrace();}  
+		finally {
+			if(connection !=null);
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} 
+     return ebb;  
+	}
+	
+
+	@Override
+	public List<EmployeBean> getAllEmployees(EmployeBean e) {
+		// TODO Auto-generated method stub
+		List<EmployeBean> list=new ArrayList<EmployeBean>();  
+		 EmployeBean ee=new EmployeBean();
+		 DbUtil Db = new DbUtil();
+		 connection = Db.dataBase();
+		try{
+			PreparedStatement ps=connection.prepareStatement("select * from employe where id=?");  
+		 
+        ps.setInt(1,status);  
+        ResultSet rs=ps.executeQuery();  
+        if(rs.next()){  
+            ee.setEid(status);  
+            ee.setEname(rs.getString(2));  
+            ee.setEsal(rs.getDouble(3));  
+             list.add(ee);
+        }  
+        connection.close();  
+    }catch(Exception e4){
+    	e4.printStackTrace();
+    }
+      
+    return list;  
+	}
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="./UserServlet" method="post">
+UserName:<input type="text" name="uname" id="uname">
+MobileNo:<input type="text" name="mno" id="mno">
+<input type="submit" id="" value="submit"/>
+</form>
+</body>
+</html>
