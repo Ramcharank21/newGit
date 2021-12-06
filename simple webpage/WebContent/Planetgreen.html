@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Planet Green</h1>
+  <p>The only planet to host life in whole universe.</p>
+</div>
+
+<div class="navbar">
+ <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Mission</a>
+  <a href="#">Programs</a>
+   <a href="#">Contact</a>
+  <a href="#" class="right">Register</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Forest</h2>
+    <h5>Forests are vital to life on Earth :</h5>
+    <img class="Images/forest.jpg" src="Images/forest.jpg" style="height:200px;">Forest<br>
+    <p>forests are purify the air we breathe, filter the water we drink, prevent erosion,<br>
+     and act as an important buffer against climate change. ... 
+    Forests also support the lives of local communities and help them to thrive.</p>
+    <h3>Water</h3>
+    <p>Water is important to our everyday life and key to our survival. ... 
+    Water plays many important roles in the body including flushing waste from the body,<br>
+     regulating body temperature, transportation of nutrients and is necessary for digestion..</p>
+   <section>
+    <img class="Images/water-1.jpg" src="Images/water-1.jpg"
+    style="height:300px;">Drinking water<br>
+    <img class="Images/water-2.jpg" src="Images/water-2.jpg"
+    style="height:300px;">Life under Water<br>
+    
+   </section>
+  </div>
+  <div class="main">
+    <h2>Atmosphere</h2>
+    <h5>Atmosphere consists of various gases like oxygen,nitrogen,carbon dioxide etc..</h5>
+    <img class="Images/atmosphere.jpg" src="Images/atmosphere.jpg"
+     style="height:200px;">Earths Atmosphere<br>
+    <p>The atmosphere protects life on earth by shielding it from incoming ultraviolet (UV) radiation,<br>
+     keeping the planet warm through insulation, and preventing extremes between day and night temperatures.<br>
+     The sun heats layers of the atmosphere causing it to convect driving air movement and weather patterns around the world.</p>
+    <br>
+   
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+  <p class="w3-medium">
+  Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Save Earth.com</a>
+  </p>
+</div>
+
+</body>
+</html>

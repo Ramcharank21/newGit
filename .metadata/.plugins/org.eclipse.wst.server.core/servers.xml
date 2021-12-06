@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="9">
-    <list key="modules" value0="apps::org.eclipse.jst.jee.server:apps::jst.web::3.0"/>
+  <server auto-publish-time="0" configuration-id="/Servers/Adobe Experience Manager at localhost-config" hostname="localhost" id="Adobe Experience Manager at localhost" launchpad.bundle.org.apache.sling.tooling.support.install.version="1.0.4" launchpad.bundle.org.apache.sling.tooling.support.source.version="1.0.4" launchpad.contextPath="/" launchpad.debugPort="30303" launchpad.installLocally="true" launchpad.password="admin" launchpad.port="4502" launchpad.username="admin" name="Adobe Experience Manager at localhost" runtime-id="Adobe Experience Manager" server-type="org.apache.sling.ide.launchpadServer" server-type-id="org.apache.sling.ide.launchpadServer" start-timeout="30" stop-timeout="15" timestamp="30">
+    <list key="modules" value0="task.ui.apps::org.apache.sling.ide.contentModuleFactory:task.ui.apps::sling.content::1.0"/>
   </server>
 </servers>
